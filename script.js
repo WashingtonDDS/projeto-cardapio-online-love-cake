@@ -13,3 +13,10 @@ const addressWarn = document.getElementById("address-warn")
 cartBtn.addEventListener("click", function(){
     cartModal.style.display = "flex"
 })
+
+// Fecha o modal quando clicar fora
+cartModal.addEventListener("click", function(evento){
+    if (evento.target === cartModal) {
+        cartModal.style.display = "none"
+    }
+})
