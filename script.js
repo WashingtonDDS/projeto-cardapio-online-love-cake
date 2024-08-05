@@ -24,3 +24,21 @@ cartModal.addEventListener("click", function(evento){
 closeModalBtn.addEventListener("click", function(){
     cartModal.style.display = "none"
 })
+
+// Adicionar no carrinho
+menu.addEventListener("click", function(evento){
+    //console.log(evento.target); pegar o evento do click
+    let parentButton = evento.target.closest(".add-to-cart-btn") //classe sempre começa com ponta. //id com #
+    
+    if (parentButton) {
+        const name = parentButton.getAttribute("data-name")
+        const price = parseFloat(parentButton.getAttribute("data-price"))
+
+        addToCart(name, price)
+    }
+})
+
+function addToCart(name, price){
+    alert("O item é " + name)
+}
+
